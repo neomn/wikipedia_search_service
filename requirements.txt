@@ -1,0 +1,6 @@
+wikipedia
+pytest
+pytest-cov
+pyling
+black
+fire
