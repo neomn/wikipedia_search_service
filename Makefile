@@ -7,6 +7,7 @@ install:
 
 format:
 	#reformat the hole codes
+	black *.py src/*.py
 
 lint:
 	#use #flake8 or #pylint
