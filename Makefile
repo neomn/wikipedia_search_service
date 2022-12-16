@@ -14,6 +14,7 @@ lint:
 	pylint --disable=R,C  src/*.py src/mylib/*.py
 test:
 	#run tests
+	python -m pytest -vv test_logic.py
 
 deploy:
 	#deploy commands
