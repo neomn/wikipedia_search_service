@@ -1,6 +1,9 @@
+from fastapi import FastAPI
+from src.mylib.logic import search_wiki
 
+app = FastAPI()
+# print(search_wiki())
 
-from src.mylib.logic import wiki
-
-print(wiki())
-
+@app.get('/')
+async def root():
+    return {'wikipedia search service'}
