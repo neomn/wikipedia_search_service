@@ -1,4 +1,4 @@
-FROM python:3.10.9-alpine3.17
+FROM python:3.10.9-slim-buster
 COPY . /app
 WORKDIR /app
 RUN apt install -y make
