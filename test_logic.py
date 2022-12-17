@@ -1,5 +1,5 @@
-from src.mylib.logic import wiki
+from src.mylib.logic import search_wiki
 
-def test_wiki():
-   assert "war" in wiki()
-   
+
+def test_search_wiki():
+    assert "Obama" in search_wiki()

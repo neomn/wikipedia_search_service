@@ -1,8 +1,9 @@
 import wikipedia
 
 
-def search_wiki(name="War Goddess", length=1):
+def search_wiki(name="barack", length=1):
     """this is wikipedia fetcher"""
 
-    result = wikipedia.search(name, length)
+    title = wikipedia.search(name, length)
+    result = wikipedia.summary(title)
     return result
