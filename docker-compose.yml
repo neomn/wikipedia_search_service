@@ -9,5 +9,13 @@ services:
     tty: true
     ports:
       - "8080:8080"
+  mongo:
+    image: mongodb/mongodb-community-database
+    container_name: mongo
+    tty: true
+    ports:
+      - "12012:12012"
+    volumes:
+      - ./mongo:/where-ever-mongo-files-stored
 
 
