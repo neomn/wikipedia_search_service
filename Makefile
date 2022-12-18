@@ -20,6 +20,7 @@ deploy:
 
 build:
 	#build docker image
+	docker build -t wiki_search .
 
 run:
     #run application container
