@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wiki_search
+    tty: true
+    ports:
+      - "8080:8080"
+
+
