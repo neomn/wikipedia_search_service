@@ -1,4 +1,6 @@
 version: '3'
+networks:
+  wiki:
 
 services:
   app:
@@ -9,6 +11,8 @@ services:
     tty: true
     ports:
       - "8080:8080"
+    networks:
+      - wiki
   mongo:
     image: mongo
     container_name: mongo
@@ -17,5 +21,7 @@ services:
       - "27017:27017"
     volumes:
       - ./mongo:/date/db
+    networks:
+      - wiki
 
 
