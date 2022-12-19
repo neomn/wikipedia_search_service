@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 import uvicorn
-import pymongo
+from pymongo import MongoClient
 from src.mylib.logic import search_wiki
 
 app = FastAPI()
-
+client = MongoClient('localhost', 27017)
 
 # print(search_wiki())
 
