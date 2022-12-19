@@ -7,7 +7,7 @@ app = FastAPI()
 
 client = MongoClient('localhost', 27017)
 db = client['wiki_db']
-myCollection = client['testCollection']
+myCollection = client['search_records']
 
 
 @app.get('/')
@@ -21,7 +21,7 @@ async def search(value: str):
     return search_wiki(value, 1)
 
 
-@app.get('/searched-values')
+@app.get('/test')
 def records():
     return myCollection
 
