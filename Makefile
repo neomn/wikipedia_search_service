@@ -20,10 +20,10 @@ deploy:
 
 build:
 	#build docker image
-	docker build -t wiki_search .
+	#docker build -t wiki_search .
 
 run:
     #run application container
-    docker run -d -p 127.0.0.1:8080:8080 wiki_search
+    #docker run -d -p 127.0.0.1:8080:8080 wiki_search
 
 all: install format lint test deploy build run
