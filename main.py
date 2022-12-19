@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
+
 from src.mylib.logic import search_wiki
 
 app = FastAPI()
