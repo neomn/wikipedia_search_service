@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
-
+import pymongo
 from src.mylib.logic import search_wiki
 
 app = FastAPI()
