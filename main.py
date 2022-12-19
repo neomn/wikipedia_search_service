@@ -23,7 +23,7 @@ async def search(value: str):
 
 @app.get('/test')
 def records():
-    return myCollection
+    return db.search_records.find()
 
 
 if __name__ == '__main__':
