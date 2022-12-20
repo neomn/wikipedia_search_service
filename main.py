@@ -18,7 +18,8 @@ async def root():
 @app.get('/search/{value}')
 async def search(value: str):
     """search in wikipedia for given value"""
-    return search_wiki(value, 1)
+    result = search_wiki(value, 1)
+    return result
 
 
 @app.get('/test')
