@@ -8,5 +8,5 @@ def search_wiki(name="barack", length=1):
     try:
         title = wikipedia.search(name, length)
         result = wikipedia.summary(title)
-    except: result = 'no result'
+    except: result = '  no result  '
     return result
