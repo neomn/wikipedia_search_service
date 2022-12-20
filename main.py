@@ -19,10 +19,14 @@ async def root():
 async def search(value: str):
     """search in wikipedia for given value"""
     result = search_wiki(value, 1)
+
+    # save value and result in database
+
+
     return result
 
 
-@app.get('/test')
+@app.get('/history')
 def records():
     return db.search_records.find()
 
