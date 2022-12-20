@@ -7,8 +7,7 @@ app = FastAPI()
 
 client = MongoClient('localhost', 27017)
 db = client['wiki_db']
-testCollection = db.test
-# search_records = client['search_records']
+search_records = db['search_records']
 
 
 @app.get('/')
@@ -22,20 +21,24 @@ async def search(value: str):
     result = search_wiki(value, 1)
 
     # save value and result in database
-    # record = {value: result}
-    testCollection.insert_one({"test": 'test'})
+    record = {value: result}
+    search_records.insert_one(record)
 
     # try:
     #     testCollection.insertOne({"test": 'test'})
     # except:
     #     result += " failed to insert record to database   "
     #
-    # return result
+    return result
 
 
 @app.get('/history')
 def records():
-    return db.list_collection_names()
+    all_records = []
+    for record in search_records.find():
+        all_records += record
+
+    return all_records
 
 
 if __name__ == '__main__':
