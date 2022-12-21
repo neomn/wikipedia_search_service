@@ -12,6 +12,8 @@ services:
     depends_on:
       - app
       - mongo
+    networks:
+      wiki-network:
 
   app:
     build:
@@ -23,6 +25,10 @@ services:
       - "8080:8080"
     depends_on:
       - mongo
+    networks:
+      wiki-network:
+        - aliases:
+            - fastapi-app
 
   mongo:
     image: mongo
@@ -36,6 +42,8 @@ services:
       MONGO_INITDB_DATABASE: wiki_db
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpass
+    networks:
+      wiki-network:
 
 
 
