@@ -9,7 +9,7 @@ format:
 
 lint:
 	#lint using pylint
-	pylint --disable=R,C  src/*.py src/mylib/*.py
+	#pylint --disable=R,C  src/*.py src/mylib/*.py
 
 test:
 	#run tests and check test coverage
