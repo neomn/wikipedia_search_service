@@ -10,12 +10,12 @@ db = client['wiki_db']
 search_records = db['search_records']
 
 
-@app.get('/')
+@app.get('/wiki')
 async def root():
     return {'wikipedia search service , call /search/value endpoint to search in wikipedia'}
 
 
-@app.get('/search/{value}')
+@app.get('/wiki/search/{value}')
 async def search(value: str):
     """search in wikipedia for given value"""
     result = search_wiki(value, 1)
@@ -32,7 +32,7 @@ async def search(value: str):
     return result
 
 
-@app.get('/history')
+@app.get('/wiki/history')
 def records():
     all_records = []
     for record in search_records.find():
@@ -41,5 +41,5 @@ def records():
     return all_records
 
 
-# if __name__ == '__main__':
-#     uvicorn.run(app, port=8080, host='0.0.0.0')
+if __name__ == '__main__':
+    uvicorn.run(app, port=80, host='0.0.0.0')
