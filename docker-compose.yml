@@ -22,7 +22,7 @@ services:
     container_name: wiki_search
     tty: true
     ports:
-      - "8080:8080"
+      - "3000:3000"
     depends_on:
       - mongo
 
